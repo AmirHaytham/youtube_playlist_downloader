@@ -4,14 +4,14 @@ const fs = require('fs');
 const ProgressBar = require('progress');
 
 // Configure the output directory for downloads
-const outputDir = './EhabEnglish/playlists';
+const outputDir = './downloads'; // General output directory for any downloads
 if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
+    fs.mkdirSync(outputDir, { recursive: true });
 }
 
 // Paths to yt-dlp and ffmpeg executables
-const ytDlpPath = 'C:\\yt-dlp\\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located
-const ffmpegPath = 'C:\\ffmpeg\\bin\\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located
+const ytDlpPath = 'C:\yt-dlp\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located or set it in PATH
+const ffmpegPath = 'C:\ffmpeg\bin\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located or set it in PATH
 
 // Check if ffmpeg is accessible
 console.log(`Using ffmpeg located at: ${ffmpegPath}`); // Debug log for ffmpeg path
@@ -70,6 +70,12 @@ function downloadPlaylistWithProgress(playlistUrl) {
     });
 }
 
-// Provide the playlist URL here
-const playlistUrl = 'https://www.youtube.com/@IhabRamziyallaspeak/playlists';
-downloadPlaylistWithProgress(playlistUrl);
+// Example usage
+const playlistUrl = 'YOUR_PLAYLIST_OR_VIDEO_URL_HERE'; // Replace with your desired playlist or video URL
+if (playlistUrl) {
+    downloadPlaylistWithProgress(playlistUrl);
+} else {
+    console.error('Please provide a valid YouTube playlist or video URL.');
+}
+
+//module.exports = downloadPlaylistWithProgress; // Export function for external use
