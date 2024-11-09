@@ -73,8 +73,8 @@ Update the script file (`downloadPlaylist.js`) with the correct paths to `yt-dlp
 
 ```javascript
 // Paths to yt-dlp and ffmpeg executables
-const ytDlpPath = 'C:\yt-dlp\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located
-const ffmpegPath = 'C:\ffmpeg\bin\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located
+const ytDlpPath = 'C:\\yt-dlp\\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located
+const ffmpegPath = 'C:\\ffmpeg\\bin\\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located
 ```
 
 ## Usage
