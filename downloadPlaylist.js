@@ -10,8 +10,8 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // Paths to yt-dlp and ffmpeg executables
-const ytDlpPath = 'C:\yt-dlp\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located or set it in PATH
-const ffmpegPath = 'C:\ffmpeg\bin\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located or set it in PATH
+const ytDlpPath = 'C:\\yt-dlp\\yt-dlp.exe'; // Update to the actual path where yt-dlp.exe is located
+const ffmpegPath = 'C:\\ffmpeg\\bin\\ffmpeg.exe'; // Update to the actual path where ffmpeg.exe is located
 
 // Check if ffmpeg is accessible
 console.log(`Using ffmpeg located at: ${ffmpegPath}`); // Debug log for ffmpeg path
