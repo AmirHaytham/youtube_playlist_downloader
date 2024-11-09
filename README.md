@@ -1,21 +1,53 @@
-# YouTube Downloader
+# YouTube Playlist Downloader
 
-This script allows you to download YouTube videos directly.
+This repository provides a script for downloading YouTube playlists as high-quality video files. The script uses `yt-dlp` and `ffmpeg` to download and merge video and audio files into a single file.
 
-## How to Run
+## Features
+- Downloads YouTube playlists in high-quality (up to 1080p)
+- Merges audio and video using `ffmpeg`
+- Shows download progress in the terminal
 
-1. Ensure you have Python 3 installed on your system.
-2. Download the script from the repository.
-3. Open a terminal and navigate to the script's directory.
-4. Run the script using the following command:
+## Installation
+
+1. **Clone the Repository**
    ```bash
-   python3 youtube_downloader.py
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
    ```
 
-## Backlog
+2. **Install Dependencies**
+   Ensure you have Node.js installed, then install the required Node packages:
+   ```bash
+   npm install progress
+   ```
 
-- [x] User can input a YouTube video URL to download.
-- [x] The script downloads the video in the best available quality.
-- [ ] Add option to download only audio.
-- [ ] Implement error handling for invalid URLs.
-- [ ] Allow selection of video quality.
+3. **Download and Set Up `yt-dlp` and `ffmpeg`**
+   - Download `yt-dlp.exe` from the [yt-dlp releases page](https://github.com/yt-dlp/yt-dlp/releases/latest) and save it in a folder (e.g., `C:\yt-dlp\`).
+   - Download `ffmpeg.exe` from the [ffmpeg website](https://ffmpeg.org/download.html), extract it, and save `ffmpeg.exe` in a folder (e.g., `C:\ffmpeg\`).
+
+4. **Configure Paths**
+   Open the script file and set the paths to `yt-dlp` and `ffmpeg`:
+   ```javascript
+   const ytDlpPath = 'C:\yt-dlp\yt-dlp.exe'; // Update to the actual path
+   const ffmpegPath = 'C:\ffmpeg\ffmpeg.exe'; // Update to the actual path
+   ```
+
+5. **Run the Script**
+   Provide your playlist URL and run the script:
+   ```bash
+   node downloadPlaylist.js
+   ```
+
+## Usage
+
+1. Modify `playlistUrl` in the script to the YouTube playlist you want to download.
+2. Run `node downloadPlaylist.js` to start downloading videos.
+
+## Backlog (User Stories)
+
+- [x] Add functionality to download video and audio from YouTube playlists
+- [x] Integrate `yt-dlp` for high-quality video downloads
+- [x] Integrate `ffmpeg` to merge audio and video files
+- [x] Add a progress bar to show download status
+- [ ] Create a setup script for easier installation
+- [ ] Add error handling for unsupported formats or unavailable videos
