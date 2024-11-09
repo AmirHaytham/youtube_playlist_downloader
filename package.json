@@ -1,0 +1,24 @@
+{
+  "name": "youtube-playlist-downloader",
+  "version": "1.0.0",
+  "description": "A tool for downloading YouTube playlists, channels, or individual videos in high-quality using yt-dlp and ffmpeg.",
+  "main": "downloadPlaylist.js",
+  "scripts": {
+    "start": "node downloadPlaylist.js"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "progress": "^2.0.3",
+    "youtube-playlist": "^1.0.4",
+    "ytdl-core": "^4.11.5",
+    "ytpl": "^2.3.0"
+  },
+  "keywords": [
+    "youtube",
+    "playlist",
+    "downloader",
+    "yt-dlp",
+    "ffmpeg"
+  ],
+  "author": "Amir Haytham"
+}
