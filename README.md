@@ -1,11 +1,21 @@
 # YouTube Playlist Downloader
 
-This repository provides a script for downloading YouTube playlists as high-quality video files. The script uses `yt-dlp` and `ffmpeg` to download and merge video and audio files into a single file.
+This repository provides a general-purpose script for downloading YouTube playlists, channels, or individual videos as high-quality video files. The script uses `yt-dlp` and `ffmpeg` to download and merge video and audio files into a single file.
 
 ## Features
-- Downloads YouTube playlists in high-quality (up to 1080p)
+- Downloads YouTube playlists, individual videos, or all videos from a channel
+- Downloads in high-quality (up to 1080p)
 - Merges audio and video using `ffmpeg`
 - Shows download progress in the terminal
+
+## Story
+
+I created this script because I needed to download some courses from YouTube for offline viewing. Specifically, I wanted to download:
+
+1. A YouTube playlist containing AWS courses: [AWS Course Playlist](https://www.youtube.com/watch?v=E3nLSHQtLes&list=PLOoZRfEtk6kWSM_l9xMjDh-_MJXl03-pf).
+2. Another English course by Mr. Ihab Ramzi, available on his channel: [Ihab Ramzi's Channel](https://www.youtube.com/@IhabRamziyallaspeak/featured).
+
+The script allows you to provide a link to an individual video, a playlist, or even the entire videos page of a channel, such as [Ihab Ramzi's Videos](https://www.youtube.com/@IhabRamziyallaspeak/videos), and it can download all the videos efficiently.
 
 ## Installation
 
@@ -30,14 +40,28 @@ This repository provides a script for downloading YouTube playlists as high-qual
 
    You should see version numbers for both Node.js and npm.
 
-3. **Install Required Node Packages**  
+3. **Install Python (if not already installed)**
+
+   `yt-dlp` requires Python to run. Download and install it from the [official Python website](https://www.python.org/downloads/).
+
+   Make sure to add Python to your system PATH during installation.
+
+   Python is needed because `yt-dlp` relies on it for many of its internal operations, and it ensures compatibility with YouTube's frequently changing video formats.
+
+   To verify Python installation, run:
+
+   ```bash
+   python --version
+   ```
+
+4. **Install Required Node Packages**  
    Navigate to the project directory and install the required package by running:
 
    ```bash
    npm install progress
    ```
 
-4. **Download and Set Up `yt-dlp` and `ffmpeg`**
+5. **Download and Set Up `yt-dlp` and `ffmpeg`**
 
    `yt-dlp` and `ffmpeg` are required for downloading and merging video and audio files.
 
@@ -50,7 +74,7 @@ This repository provides a script for downloading YouTube playlists as high-qual
      - Extract the downloaded ZIP file and locate `ffmpeg.exe` in the `bin` folder.
      - Move `ffmpeg.exe` to a directory, such as `C:\ffmpeg\`.
 
-5. **Add `yt-dlp` and `ffmpeg` to Your Script**
+6. **Add `yt-dlp` and `ffmpeg` to Your Script**
 
    Open the script file (e.g., `downloadPlaylist.js`) and set the paths to `yt-dlp` and `ffmpeg` by updating the following lines with the correct paths:
 
@@ -59,9 +83,12 @@ This repository provides a script for downloading YouTube playlists as high-qual
    const ffmpegPath = 'C:\ffmpeg\ffmpeg.exe'; // Path to ffmpeg
    ```
 
-6. **Run the Script**
+7. **Run the Script**
 
-   - Modify the `playlistUrl` variable in the script to the YouTube playlist URL you want to download.
+   - Modify the `playlistUrl` variable in the script to the YouTube playlist, video, or channel URL you want to download. This script is designed for general use, so you can use any valid YouTube URL, such as:
+     - Playlist URL: `https://www.youtube.com/watch?v=E3nLSHQtLes&list=PLOoZRfEtk6kWSM_l9xMjDh-_MJXl03-pf`
+     - Channel videos page: `https://www.youtube.com/@IhabRamziyallaspeak/videos`
+   
    - In the terminal, navigate to the project directory and run:
 
    ```bash
@@ -72,7 +99,7 @@ This repository provides a script for downloading YouTube playlists as high-qual
 
 ## Usage
 
-1. Set the desired playlist URL in the `playlistUrl` variable within the script.
+1. Set the desired playlist, video, or channel URL in the `playlistUrl` variable within the script.
 2. Run `node downloadPlaylist.js` to download videos to the `downloads` folder.
 
 ## Required Packages
@@ -92,5 +119,6 @@ npm install progress
 - [x] Integrate `yt-dlp` for high-quality video downloads
 - [x] Integrate `ffmpeg` to merge audio and video files
 - [x] Add a progress bar to show download status
+- [x] Add functionality to download all videos from a channel
 - [ ] Create a setup script for easier installation
 - [ ] Add error handling for unsupported formats or unavailable videos
